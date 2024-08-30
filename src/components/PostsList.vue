@@ -1,6 +1,8 @@
 <template>
   <div class="grid">
-    <PostItem v-for="post in posts1" :post2="post" :key="post.id" />
+    <PostItem v-for="post in posts1"
+    :post2="post" 
+    :key="post.id" />
   </div>
 </template>
 
