@@ -15,3 +15,4 @@ export interface Post {
     isLoading: false,
     error: null,
   });
+  

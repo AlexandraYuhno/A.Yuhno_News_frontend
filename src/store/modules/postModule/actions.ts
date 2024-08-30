@@ -7,8 +7,8 @@ export default {
   async fetchPosts({ commit }: ActionContext<PostsState, Post>) {
     try {
       commit('setPostsRequest');
-      const response = await api.get('/posts');
-      commit('setPostsSuccess', response.data);
+      const { data } = await api.get('posts');
+      commit('setPostsSuccess', data);
     } catch (e) {
       commit('setPostsError', 'Error while fetching posts');
     }

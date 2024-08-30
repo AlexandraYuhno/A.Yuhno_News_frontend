@@ -1,30 +1,31 @@
 <template>
-    <div class="post">
-      <h3 class="post-title"> {{post.title}} </h3>
-          <div class="post-image-wrapper">
-            <img alt="Post Image" class="post-image" :src="post.img_url">
-          </div>
-          <div class="post-content">
-            <p class="post-descriptions">
-              {{post.content}}
-            </p>
-          </div>
+  <div class="post">
+    <h3 class="post-title"> {{ post2.title }} </h3>
+    <div class="post-image-wrapper">
+      <img alt="Post Image" class="post-image" :src="post2.imgUrl" />
     </div>
-  </template>
-  
-  <script>
-    export default {
-      props: {
-        post: {
-          type: Object,
-          required: true,
-        }
-      }
+    <div class="post-content">
+      <p class="post-descriptions">
+        {{ post2.content }}
+      </p>
+    </div>
+  </div>
+</template>
+
+<script setup>
+  import { defineProps } from 'vue';
+
+  defineProps({
+    post2: {
+      type: Object,
+      required: true,
     }
-  </script>
-  
-  <style>
-     .post {
+});
+
+</script>
+
+<style scoped>
+  .post {
       background-color: #fff; 
       border-radius: 10px; 
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -86,5 +87,4 @@
       max-width: 100%;
 
     } 
-      
-  </style>
+</style>
