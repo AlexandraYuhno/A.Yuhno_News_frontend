@@ -8,9 +8,17 @@
       :src="post2.imgUrl" />
     </div>
     <div class="post-content">
+      <p class="post-create"> {{ post2.created_at }} </p>
       <p class="post-descriptions">
         {{ post2.content }}
       </p>
+    </div>
+    <div class="user"> 
+      <a href="#" class="user-login">{{ post2.user.login }} </a>
+      <img 
+      class="user-avatar"
+      :src="post2.user.avatarUrl"
+      alt="User Avatar"/>
     </div>
   </div>
 </template>
@@ -88,4 +96,33 @@
     margin-bottom: 20px;
     max-width: 100%;
   } 
+
+  .user-login {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+    font-style: italic;
+  }
+
+  .user-login:hover {
+    color: #000;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;  
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+  }
+
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 10px;
+    border: 1px solid #eee;
+    object-fit: cover;
+  }
 </style>
