@@ -1,4 +1,4 @@
-import { Post, PostsState } from "../types";
+import { Post, PostsState } from "../../types";
 
 export default {
     setPostsRequest(state: PostsState) {

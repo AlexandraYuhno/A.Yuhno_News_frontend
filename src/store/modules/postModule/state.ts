@@ -1,4 +1,4 @@
-import { PostsState } from "../types"
+import { PostsState } from "../../types"
 
 export default {
     state: (): PostsState => ({

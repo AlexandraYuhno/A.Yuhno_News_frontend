@@ -1,7 +1,7 @@
 import { ActionContext } from 'vuex';
 
 import api from '@/store/api';
-import { Post, PostsState } from '../types';
+import { Post, PostsState } from '../../types';
 
 export default {
   async fetchPosts({ commit }: ActionContext<PostsState, Post>) {

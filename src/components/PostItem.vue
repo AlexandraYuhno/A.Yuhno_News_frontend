@@ -1,39 +1,43 @@
 <template>
   <div class="post">
-    <h3 class="post-title"> {{ post2.title }} </h3>
+    <h3 class="post-title">{{ post2.title }}</h3>
     <div class="post-image-wrapper">
-      <img 
-      alt="Post Image" 
-      class="post-image" 
-      :src="post2.imgUrl" />
+      <img alt="Post Image" class="post-image" :src="post2.imgUrl" />
     </div>
     <div class="post-content">
-      <p class="post-create"> {{ post2.created_at }} </p>
-      <p class="post-descriptions">
-        {{ post2.content }}
-      </p>
+      <p class="post-create">{{ formatDate(post2.created_at) }}</p>
+      <p class="post-descriptions">{{ post2.content }}</p>
     </div>
-    <div class="user"> 
-      <a href="#" class="user-login">{{ post2.user.login }} </a>
-      <img 
-      class="user-avatar"
-      :src="post2.user.avatarUrl"
-      alt="User Avatar"/>
+    <div class="user">
+      <a href="#" class="user-login">{{ post2.user.login }}</a>
+      <img class="user-avatar" :src="post2.user.avatarUrl" alt="User Avatar" />
+    </div>
+    <div v-if="post2.tag">
+      <TagsPost :tags="post2.tag" />
+    </div>
+    <div v-else>
+      <p>No tags available</p>
     </div>
   </div>
 </template>
 
 <script setup>
-  import { defineProps } from 'vue';
+import { defineProps } from 'vue';
+import TagsPost from './TagsPost.vue';
 
-  defineProps({
-    post2: {
-      type: Object,
-      required: true,
-    }
+defineProps({
+  post2: {
+    type: Object,
+    required: true,
+  }
 });
-
+function formatDate(dateString) {
+  const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+  const date = new Date(dateString);
+  return date.toLocaleDateString('ru-RU', options);
+}
 </script>
+
 
 <style scoped>
   .post {
@@ -98,7 +102,7 @@
   } 
 
   .user-login {
-    margin-right: 20px;
+    margin-right: 10px;
     text-decoration: none;
     color: #333;
     font-style: italic;
@@ -125,4 +129,13 @@
     border: 1px solid #eee;
     object-fit: cover;
   }
+
+  .post-create {
+    color: #999;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    font-style: italic;
+    text-align: end;
+  }
+
 </style>
