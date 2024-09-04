@@ -1,19 +1,25 @@
 <template>
   <div class="post">
-    <h3 class="post-title">{{ post2.title }}</h3>
+    <h3 class="post-title">{{ title }}</h3>
     <div class="post-image-wrapper">
-      <img alt="Post Image" class="post-image" :src="post2.imgUrl" />
+      <img 
+      alt="Post Image" 
+      class="post-image" 
+      :src="imgUrl" />
     </div>
     <div class="post-content">
-      <p class="post-create">{{ formatDate(post2.created_at) }}</p>
-      <p class="post-descriptions">{{ post2.content }}</p>
+      <p class="post-create">{{ formatDate(created_at) }}</p>
+      <p class="post-descriptions">{{ content }}</p>
     </div>
     <div class="user">
-      <a href="#" class="user-login">{{ post2.user.login }}</a>
-      <img class="user-avatar" :src="post2.user.avatarUrl" alt="User Avatar" />
+      <a href="#" class="user-login">{{ user.login }}</a>
+      <img 
+      class="user-avatar" 
+      :src="user.avatarUrl" 
+      alt="User Avatar" />
     </div>
-    <div v-if="post2.tag">
-      <TagsPost :tags="post2.tag" />
+    <div v-if="tags">
+      <TagsPost :tags="tags"/>
     </div>
     <div v-else>
       <p>No tags available</p>
@@ -21,23 +27,25 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { defineProps } from 'vue';
 import TagsPost from './TagsPost.vue';
+import { PostProps } from './typesProps'; 
 
-defineProps({
-  post2: {
-    type: Object,
-    required: true,
-  }
-});
-function formatDate(dateString) {
-  const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+defineProps<PostProps>();
+
+function formatDate(dateString: string): string {
+  const options: Intl.DateTimeFormatOptions = { 
+    year: 'numeric', 
+    month: '2-digit', 
+    day: '2-digit' 
+  };
+  
   const date = new Date(dateString);
   return date.toLocaleDateString('ru-RU', options);
 }
-</script>
 
+</script>
 
 <style scoped>
   .post {
@@ -134,7 +142,7 @@ function formatDate(dateString) {
     color: #999;
     font-size: 0.8em;
     margin-bottom: 5px;
-    font-style: italic;
+    font-style: italic bold;
     text-align: end;
   }
 

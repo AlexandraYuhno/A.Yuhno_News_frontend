@@ -1,21 +1,24 @@
 <template>
   <div class="grid">
     <PostItem v-for="post in posts1"
-    :post2="post" 
-    :key="post.id" />
+      :key="post.id"
+      :id="post.id"
+      :title="post.title"
+      :content="post.content"
+      :imgUrl="post.imgUrl"
+      :tags="post.tags"
+      :created_at="post.created_at"
+      :user="post.user" />
   </div>
 </template>
 
-<script setup>
-  import PostItem from "./PostItem.vue";
+<script setup lang="ts">
   import { defineProps } from "vue";
 
- defineProps({
-    posts1: {
-      type: Array,
-      required: true,
-    },
-  });
+  import PostItem from "./PostItem.vue";
+  import { PostListProps } from "./typesProps";
+
+ defineProps<PostListProps>();
 
 </script>
 
