@@ -15,9 +15,11 @@
 <script setup lang="ts">
   import { defineProps } from "vue";
 
-  import PostItem from "./PostItem.vue";
-  import { PostListProps } from "./typesProps";
-
+  import PostItem, { PostProps } from "./PostItem.vue";
+  
+  export interface PostListProps {
+    posts: PostProps[];
+  }
  defineProps<PostListProps>();
 </script>
 

@@ -9,8 +9,8 @@ export default {
       commit('setPostsRequest');
       const { data } = await api.get('posts');
       commit('setPostsSuccess', data);
-    } catch (e) {
-      commit('setPostsError', 'Error while fetching posts');
+    } catch (error) {
+      commit('setPostsError', error);
     }
   }
 };

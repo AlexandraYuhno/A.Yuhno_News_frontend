@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <HeadApp />
+    <AppHeader />
     <MainPage />
   </div>
 </template>
 
 <script setup>
-  import HeadApp  from "./components/HeadApp.vue";
-  import MainPage from "./components/MainPage.vue";
+  import AppHeader  from "./components/AppHeader.vue";
+  import MainPage from "./pages/MainPage.vue";
 </script>
 
 <style>

@@ -21,16 +21,24 @@
     <div v-if="tags">
       <TagsPost :tagsArray="tags"/>
     </div>
-    <div v-else>
-      <p>No tags available</p>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import TagsPost from './TagsPost.vue';
-import { PostProps } from './typesProps'; 
+
+import TagsPost, { Tag } from './TagsPost.vue';
+import  { User } from "./typesProps";
+
+export interface PostProps {
+    id: number;
+    content: string;
+    title: string;
+    imgUrl: string;
+    tags: Tag[];
+    created_at: string;
+    user: User;
+  }
 
 defineProps<PostProps>();
 
@@ -49,7 +57,7 @@ function formatDate(dateString: string): string {
 
 <style scoped>
   .post {
-    background-color: #fff; 
+    background-color: var(--background-color); 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     overflow: hidden; 
@@ -82,11 +90,11 @@ function formatDate(dateString: string): string {
     font-size: 1.5em; 
     font-weight: bold;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--text-color)
   }
   
   .post-title:hover {
-    box-shadow: 10px 5px 5px  #333;
+    box-shadow: 10px 5px 5px  var(--shadow-color);
   }
   
    
@@ -103,7 +111,7 @@ function formatDate(dateString: string): string {
   
   .post-description {
     font-size: 1em;
-    color: #555; 
+    color: var(--dark-color); 
     line-height: 1.55;
     margin-bottom: 20px;
     max-width: 100%;
@@ -112,12 +120,12 @@ function formatDate(dateString: string): string {
   .user-login {
     margin-right: 10px;
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
     font-style: italic;
   }
 
   .user-login:hover {
-    color: #000;
+    color: var(--shadow-color);
   }
 
   .user {
@@ -125,8 +133,8 @@ function formatDate(dateString: string): string {
     align-items: center;
     flex-direction: row-reverse;
     justify-content: space-between;  
-    background-color: #f9f9f9;
-    border-top: 1px solid #eee;
+    background-color: var(--light-color);
+    border-top: 1px solid var(--border-color);
   }
 
   .user-avatar {
@@ -134,12 +142,12 @@ function formatDate(dateString: string): string {
     height: 30px;
     border-radius: 50%;
     margin: 10px;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color);
     object-fit: cover;
   }
 
   .post-create {
-    color: #999;
+    color: var(--create-color);
     font-size: 0.8em;
     margin-bottom: 5px;
     font-style: italic bold;

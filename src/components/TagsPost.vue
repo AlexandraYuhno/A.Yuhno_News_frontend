@@ -13,7 +13,11 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import { Tag } from './typesProps';
+
+export interface Tag {
+  id: number;
+  name: string;
+}
 
 defineProps<{ tagsArray: Tag[] }>();
 
@@ -26,7 +30,7 @@ defineProps<{ tagsArray: Tag[] }>();
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
-  color: #000;
+  color: var(--shadow-color);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   text-align: end;
@@ -35,8 +39,8 @@ defineProps<{ tagsArray: Tag[] }>();
 
 .tag:hover {
   transform: scale(1.1);
-  background-color: #000;
-  color: #fff;
+  background-color: var(--shadow-color);
+  color: var(--background-color);
 }
 
 </style>
