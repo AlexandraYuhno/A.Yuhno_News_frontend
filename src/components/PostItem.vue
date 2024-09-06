@@ -19,7 +19,7 @@
       alt="User Avatar" />
     </div>
     <div v-if="tags">
-      <TagsPost :tags="tags"/>
+      <TagsPost :tagsArray="tags"/>
     </div>
     <div v-else>
       <p>No tags available</p>

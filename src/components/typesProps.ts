@@ -19,5 +19,5 @@ export interface PostProps {
   }
 
   export interface PostListProps {
-    posts1: PostProps[];
+    posts: PostProps[];
   }

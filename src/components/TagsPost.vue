@@ -1,7 +1,7 @@
 <template>
   <div>
     <span 
-      v-for="tags in tags" 
+      v-for="tags in tagsArray" 
       :key="tags.id" 
       :name="tags.name"
       class="tag"
@@ -15,7 +15,7 @@
 import { defineProps } from 'vue';
 import { Tag } from './typesProps';
 
-defineProps<{ tags: Tag[] }>();
+defineProps<{ tagsArray: Tag[] }>();
 
 </script>
 
