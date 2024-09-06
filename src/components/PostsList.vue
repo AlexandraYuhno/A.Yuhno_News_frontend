@@ -19,7 +19,6 @@
   import { PostListProps } from "./typesProps";
 
  defineProps<PostListProps>();
-
 </script>
 
 <style scoped>
