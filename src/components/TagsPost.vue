@@ -1,12 +1,11 @@
 <template>
   <div>
     <span 
-      v-for="tags in tagsArray" 
-      :key="tags.id" 
-      :name="tags.name"
-      class="tag"
-    >
-    {{ tags.name }}
+    v-for="tags in tagsArray" 
+    :key="tags.id" 
+    :name="tags.name" 
+    class="tag">
+      {{ tags.name }}
     </span>
   </div>
 </template>
@@ -42,5 +41,4 @@ defineProps<{ tagsArray: Tag[] }>();
   background-color: var(--shadow-color);
   color: var(--background-color);
 }
-
 </style>
