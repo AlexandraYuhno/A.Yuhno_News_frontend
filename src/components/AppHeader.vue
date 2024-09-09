@@ -1,7 +1,9 @@
 <template>
   <header>
     <div class="logo">The Daily Bugle</div>
-    <h1>The Daily Bugle</h1>
+    <div class="header-content">
+      <h1 >The Daily Bugle</h1>
+    </div>
   </header>
 </template>
 
@@ -12,7 +14,7 @@
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; 
   align-items: center;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -31,8 +33,9 @@ body {
 
 h1 {
   font-family: "Dancing Script", sans-serif;
-  margin: 20px;
+  margin: 0;
   text-align: center;
+  flex-grow: 1; 
 }
 
 .logo {
@@ -49,4 +52,11 @@ h1 {
   height: 100px;
   border-radius: 50%;
 }
+
+.header-content {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center; 
+}
+
 </style>
