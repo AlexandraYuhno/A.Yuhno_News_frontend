@@ -18,7 +18,7 @@ import MainPage from "./pages/MainPage.vue";
 }
 
 #app {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  margin: auto;
 }
 </style>

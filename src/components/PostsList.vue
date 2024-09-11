@@ -30,5 +30,6 @@ defineProps<PostListProps>();
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
+  margin: 0 10px 10px 10px;
 }
 </style>

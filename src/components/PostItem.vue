@@ -23,6 +23,7 @@ import { defineProps } from 'vue';
 
 import TagsPost, { Tag } from './TagsPost.vue';
 import { User } from "./typesProps";
+import { formatDate } from '@/utils/formatDate'
 
 export interface PostProps {
   id: number;
@@ -35,17 +36,6 @@ export interface PostProps {
 }
 
 defineProps<PostProps>();
-
-function formatDate(dateString: string): string {
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  };
-
-  const date = new Date(dateString);
-  return date.toLocaleDateString('ru-RU', options);
-}
 
 </script>
 
@@ -61,7 +51,7 @@ function formatDate(dateString: string): string {
 }
 
 .post:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 

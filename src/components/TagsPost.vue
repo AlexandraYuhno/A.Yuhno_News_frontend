@@ -1,11 +1,11 @@
 <template>
   <div>
     <span 
-    v-for="tags in tagsArray" 
-    :key="tags.id" 
-    :name="tags.name" 
+    v-for="tag in tagsArray" 
+    :key="tag.id" 
+    :name="tag.name" 
     class="tag">
-      {{ tags.name }}
+      {{ tag.name }}
     </span>
   </div>
 </template>
