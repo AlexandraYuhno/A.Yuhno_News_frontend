@@ -1,5 +1,5 @@
 {
-  "name": "news_site_client",
+  "name": "the-daily-bugle",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -23,6 +23,7 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-typescript": "^9.1.0",
+    "cpy-cli": "^5.0.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^8.7.1",
     "globals": "^15.9.0",
