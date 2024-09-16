@@ -13,4 +13,18 @@ export default {
     state.error = payload;
     state.isLoading = false;
   },
+
+  setAuthRequest(state: PostsState) {
+    state.authLoading = true;
+    state.authError = null;
+  },
+  setAuthSuccess(state: PostsState, data: { user: string; token: string }) {
+    state.authLoading = false;
+    state.user = data.user;
+    state.token = data.token;
+  },
+  setAuthError(state: PostsState, error: string) {
+    state.authLoading = false;
+    state.authError = error;
+  },
 };

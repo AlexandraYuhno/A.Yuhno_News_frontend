@@ -5,5 +5,9 @@ export default {
     posts: [],
     isLoading: false,
     error: null,
+    authLoading: false,
+    authError: null,
+    user: null,
+    token: null,
   }),
 };

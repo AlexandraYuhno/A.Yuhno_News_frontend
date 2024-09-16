@@ -19,23 +19,23 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+  import { defineProps } from 'vue';
 
-import TagsPost, { Tag } from './TagsPost.vue';
-import { User } from "./typesProps";
-import { formatDate } from '@/utils/formatDate'
+  import TagsPost, { Tag } from './TagsPost.vue';
+  import { User } from "./typesProps";
+  import { formatDate } from '@/utils/formatDate'
 
-export interface PostProps {
-  id: number;
-  content: string;
-  title: string;
-  imgUrl: string;
-  tags: Tag[];
-  created_at: string;
-  user: User;
-}
+  export interface PostProps {
+    id: number;
+    content: string;
+    title: string;
+    imgUrl: string;
+    tags: Tag[];
+    created_at: string;
+    user: User;
+  }
 
-defineProps<PostProps>();
+  defineProps<PostProps>();
 
 </script>
 
